@@ -1,1 +1,1 @@
-# amplify-gateway-test
+Axway Amplify Gateway project
