@@ -1,1 +1,1 @@
-Axway Amplify Gateway project
+This repository is for Axway open-docs tests
