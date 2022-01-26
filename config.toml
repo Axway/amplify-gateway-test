@@ -1,5 +1,5 @@
-baseURL = "https://amplify-gateway.netlify.app/"
-title = "Amplify Gateway"
+baseURL = "https://amplify-gateway-test.netlify.app/"
+title = "Amplify Gateway test"
 
 enableRobotsTXT = true
 
@@ -64,8 +64,8 @@ id = "UA-56643615-3"
 
 [languages]
 [languages.en]
-title = "Amplify Gateway Documentation"
-description = "Amplify Gateway Documentation"
+title = "Amplify Gateway test Documentation"
+description = "Amplify Gateway test Documentation"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -81,7 +81,7 @@ privacy_policy = "https://www.axway.com/en/privacy-statement"
 version_menu = "Releases"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/Axway/amplify-gateway"
+github_repo = "https://github.com/Axway/amplify-gateway-test"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
 # github_project_repo = "https://github.com/google/docsy"
 
