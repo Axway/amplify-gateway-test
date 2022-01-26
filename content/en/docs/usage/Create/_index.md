@@ -337,6 +337,7 @@ If the followng json payload is provided then a new Virtual API called 'music' w
     }
 }
 ```
+
 In this example, the specification:
 
 * Indicates that the Virtual API being created is a REST API.
@@ -574,12 +575,12 @@ spec:
                   type: string
                   description: The price currency.
 ```
+
 In this example, the specification:
 
 * Indicates that the Virtual API being created is a REST API.
 * Provides a short description of what the API does.
 * Provides the OAS 3 specification for the API. This specifcation will be parsed to create the paths that the gateway can route to. It will also be used to create a specification to be consumed by client application developers when the API is exposed via Amplify Gateway.
-
 
 ### Via UI
 
