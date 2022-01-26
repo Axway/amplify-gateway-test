@@ -8,8 +8,6 @@ description: >
   Configure CORS rule for a Virtual API.
 ---
 
-<CORS Description>
-
 ## Prerequisites
 
 * You have created a Virtual API as outlined in [Create Virtual API](/docs/usage/create/index.html).

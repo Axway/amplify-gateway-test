@@ -25,7 +25,9 @@ If the API you wish to virtualize in Amplify has an OAS specification, you can p
 
 To create a virtual API via API call the following end-point
 
-    POST /management/v1alpha1/virtualapis
+```json
+POST /management/v1alpha1/virtualapis
+```
 
 If the followng json payload is provided then a new Virtual API called 'music' will be created with a title 'Musical Instruments'
 
@@ -345,7 +347,9 @@ In this example, the specification:
 
 To create a virtual API via CLI, log on the Axway Central CLI and run the following command
 
-    axway central create -f music.yaml
+```json
+axway central create -f music.yaml
+```
 
 A yaml file called music.yaml should exist on the file system with the following contents. Executing this command with the yaml file contents will create a new Virtual API called 'music' with the title 'Musical Instruments'
 
@@ -585,35 +589,39 @@ Login to the platfrom, navigate to Central, select 'Virtual APIs' from the left 
 
 If the backend API you wish to virtualize in Amplify does not have an OAS specification, you can create the Virtual API routes manually.
 
-### Via Amplify Management APIs
+### Amplify Management APIs
 
 To create a virtual API via API call the following end-point
 
-    POST /management/v1alpha1/virtualapis
+```json
+POST /management/v1alpha1/virtualapis
+```
 
 If the followng json payload is provided then a new Virtual API called 'my-api' will be created with a title 'My API'
 
 ```json
 {
-	"group": "management",
-	"apiVersion": "v1alpha1",
-	"kind": "VirtualAPI",
-	"name": "music",
-	"title": "Musical Instruments",
-	"tags": [
-		"music",
-		"axway"
-	],
-	"spec": {
-		"type": "REST",
-		"description": "A Sample Musical Instruments API"
-	}
+"group": "management",
+"apiVersion": "v1alpha1",
+"kind": "VirtualAPI",
+"name": "music",
+"title": "Musical Instruments",
+"tags": [
+"music",
+"axway"
+],
+"spec": {
+"type": "REST",
+"description": "A Sample Musical Instruments API"
+}
 }
 ```
 
-However, this virutal API cannot be used as is. When an OAS specification is provided, then the path routes are parsed directly from the OAS specification. Where no OAS specification is provided, this information needs to be provided by calling another API to create another resource called a Virtual Service. 
+However, this virutal API cannot be used as is. When an OAS specification is provided, then the path routes are parsed directly from the OAS specification. Where no OAS specification is provided, this information needs to be provided by calling another API to create another resource called a Virtual Service.
 
-    POST /apis/management/v1alpha1/virtualapis/{virtualapiName}/virtualservices
+```json
+POST /apis/management/v1alpha1/virtualapis/{virtualapiName}/virtualservices
+```
 
 where {virtualapiName} is the name of the api created by calling the previous end-point. The following json payload should be included
 
@@ -661,19 +669,22 @@ where {virtualapiName} is the name of the api created by calling the previous en
     }
 }
 ```
+
 In this example:
 
 * The codec is set to 'AUTO' meaning that the gateway will negotiate with the backend service over how to communicate. If the backend can communicate over HTTP2 that protocol will be used by the gateway, otherwise the gateway will revert to communicating over HTTP1.1
-* 'my.api.example.com' is the backend host server and '80' is the port. The backend can be called over http protocol. 
+* 'my.api.example.com' is the backend host server and '80' is the port. The backend can be called over http protocol.
 * The prefix to call the backend service is '/v1'.
 * The backend api supports 1 operation - GET /users.
 * The prefix to call the Virtual API through the gateway is '/v1'.
 
-### Via Axway CLI
+### Axway CLI
 
 To create a virtual API via CLI, log on the Axway Central CLI and run the following command
 
-    axway central create -f my-api.yaml
+```
+axway central create -f my-api.yaml
+```
 
 A yaml file called my-api.yaml should exist on the file system with the following contents. Executing this command with the yaml file contents will create a new Virtual API called 'my-api' with the title 'My API'
 
@@ -716,19 +727,18 @@ spec:
           method: GET
   prefix: /music/v2
 ```
+
 In this example:
 
 * The codec is set to 'AUTO' meaning that the gateway will negotiate with the backend service over how to communicate. If the backend can communicate over HTTP2 that protocol will be used by the gateway, otherwise the gateway will revert to communicating over HTTP1.1
-* 'musicalinstruments.axway.com' is the backend host server and '443' is the port. The backend can be called over https protocol. 
+* 'musicalinstruments.axway.com' is the backend host server and '443' is the port. The backend can be called over https protocol.
 * The prefix to call the backend service is '/music/v2'.
-* The backend api supports 3 operations - 
-  * GET /instruments
-  * GET /instruments/{id}
-  * GET /instruments/query
+* The backend api supports 3 operations -
+    * GET /instruments
+    * GET /instruments/{id}
+    * GET /instruments/query
 * The prefix to call the Virtual API through the gateway is 'music/v2'.
 
+### UI
 
-### Via UI
-
-It is not possible to create a Virtual API with no OAS specification via the UI. 
-
+It is not possible to create a Virtual API with no OAS specification via the UI.
