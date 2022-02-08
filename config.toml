@@ -92,7 +92,7 @@ github_repo = "https://github.com/Axway/amplify-gateway-test"
 # gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
 # Enable Algolia search
-algolia_docsearch = true
+# algolia_docsearch = true
 
 # User interface configuration
 [params.ui]
