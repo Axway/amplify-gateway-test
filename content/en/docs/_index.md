@@ -23,3 +23,5 @@ Here are some suggestions to get started:
 ## Get started
 
 placeholder
+
+![Example image](/Images/APIgw_upgrade_overview.png)
